@@ -11,8 +11,8 @@ int main(int argc, char const *argv[])
     // Memory section
     // =====================================================
 
-    std::map<std::string, int> map; // map: id - num in array
-    std::vector<int> arr;           // array of variables values
+    std::map<std::string, int> vars; // map: id - num in array
+    std::vector<int> values;           // array of variables values
 
     // =====================================================
     // Phase 1
@@ -36,7 +36,7 @@ int main(int argc, char const *argv[])
         },
         {2, [&]()
             {
-                map.insert({id_cell, id_num}); 
+                vars.insert({id_cell, id_num}); 
                 id_num++;                                   // y2
                 id_cell.clear();
             }
@@ -53,7 +53,7 @@ int main(int argc, char const *argv[])
         },
         {5, [&]()
             {
-                int id = map.at(id_cell);                   // y5
+                int id = vars.at(id_cell);                   // y5
                 id_cell.clear();
                 lexemes.push_back(Lexeme(1, id));
                 lexemes.push_back(Lexeme(2, int(sym)));
@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
         },
         {6, [&]()
             {
-                int id = map.at(id_cell);                   // y6
+                int id = vars.at(id_cell);                   // y6
                 id_cell.clear();
                 lexemes.push_back(Lexeme(1, id));
                 lexemes.push_back(Lexeme(2, int(sym)));
@@ -247,10 +247,10 @@ int main(int argc, char const *argv[])
         }
         else if(lexeme.getType() == 2)
         {
-            // if ';' then store result in arr
+            // if ';' then store result in values
             if (char(lexeme.getValue()) == ';')
             {
-                arr.push_back(stack.top().getValue());
+                values.push_back(stack.top().getValue());
                 stack.pop();
                 continue;
             }
@@ -262,14 +262,14 @@ int main(int argc, char const *argv[])
             stack.pop();
             int a_val, b_val;
 
-            // if operand type is 1 then get it value from arr
+            // if operand type is 1 then get it value from values
             // else get it value via it getValue() 
             if(a.getType() == 1)
-                a_val = arr[a.getValue()];
+                a_val = values[a.getValue()];
             else
                 a_val = a.getValue();
             if(b.getType() == 1)
-                b_val = arr[b.getValue()];
+                b_val = values[b.getValue()];
             else
                 b_val = b.getValue();
             
@@ -286,9 +286,9 @@ int main(int argc, char const *argv[])
     // Print
     // =====================================================
 
-    for(auto p : map)
+    for(auto p : vars)
     {
-        std::cout << std::get<0>(p) << " = " << arr[std::get<1>(p)] << std::endl;
+        std::cout << std::get<0>(p) << " = " << values[std::get<1>(p)] << std::endl;
     }
 
     // =====================================================
