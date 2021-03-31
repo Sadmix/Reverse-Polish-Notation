@@ -1,4 +1,5 @@
 #include "statemachine.h"
+#include "lexeme.h"
 
 
 // constructor: read fs.txt and fy.txt and form fs and fy
@@ -41,7 +42,7 @@ int StateMachine::sym_to_code(char sym)
     }
 }
 
-// change state and return semantic
+// change state and return semantic num
 int StateMachine::input(char in)
 {
     int code = sym_to_code(in);
@@ -50,12 +51,19 @@ int StateMachine::input(char in)
     return output;
 }
 
+int StateMachine::input(int in)
+{
+    int output = fy[in-1][state];
+    state = fs[in-1][state];
+    return output;
+}
+
 void StateMachine::reset()
 {
     state = 0;
 }
 
-
+// read file and fills table (fs or fy);
 void StateMachine::fillTable(std::string fileName, std::vector<std::vector<int>> &table)
 {
 
@@ -79,9 +87,12 @@ void StateMachine::fillTable(std::string fileName, std::vector<std::vector<int>>
     table.push_back(raw);
 }
 
-void StateMachine::setTables(std::string fs_file, std::string fy_file)
+// reset state and update fs and fy tables
+void StateMachine::update(std::string fs_file, std::string fy_file)
 {
     state = 0;
+    fs.clear();
+    fy.clear();
     fillTable(fs_file, fs);
     fillTable(fy_file, fy);
 }

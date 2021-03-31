@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/lexeme.h
+cstdint
+-
+string
+-
+map
+-
+
+../include/statemachine.h
+fstream
+-
+vector
+-
+map
+-
+
+/home/dmitry/Desktop/Reverse-Polish-Notation-main/src/main.cpp
+iostream
+-
+vector
+-
+functional
+-
+stack
+-
+lexeme.h
+/home/dmitry/Desktop/Reverse-Polish-Notation-main/src/lexeme.h
+statemachine.h
+/home/dmitry/Desktop/Reverse-Polish-Notation-main/src/statemachine.h
+

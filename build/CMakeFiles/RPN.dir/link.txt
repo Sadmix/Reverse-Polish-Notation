@@ -1,0 +1,1 @@
+/bin/g++-9  -g   CMakeFiles/RPN.dir/src/lexeme.cpp.o CMakeFiles/RPN.dir/src/main.cpp.o CMakeFiles/RPN.dir/src/statemachine.cpp.o  -o RPN 

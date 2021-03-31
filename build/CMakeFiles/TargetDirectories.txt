@@ -1,0 +1,3 @@
+/home/dmitry/Desktop/Reverse-Polish-Notation-main/build/CMakeFiles/rebuild_cache.dir
+/home/dmitry/Desktop/Reverse-Polish-Notation-main/build/CMakeFiles/edit_cache.dir
+/home/dmitry/Desktop/Reverse-Polish-Notation-main/build/CMakeFiles/RPN.dir

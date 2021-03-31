@@ -13,8 +13,9 @@ private:
     int sym_to_code(char sym);
 public:
     StateMachine(std::string fs_file, std::string fy_file);
-    void setTables(std::string fs_file, std::string fy_file);
+    void update(std::string fs_file, std::string fy_file);
     void reset();
     int input(char in);
+    int input(int in);
     ~StateMachine();
 };

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/dmitry/Desktop/Reverse-Polish-Notation-main/build",
+  "command": "/bin/g++-9   -I/home/dmitry/Desktop/Reverse-Polish-Notation-main/include  -g   -o CMakeFiles/RPN.dir/src/lexeme.cpp.o -c /home/dmitry/Desktop/Reverse-Polish-Notation-main/src/lexeme.cpp",
+  "file": "/home/dmitry/Desktop/Reverse-Polish-Notation-main/src/lexeme.cpp"
+},
+{
+  "directory": "/home/dmitry/Desktop/Reverse-Polish-Notation-main/build",
+  "command": "/bin/g++-9   -I/home/dmitry/Desktop/Reverse-Polish-Notation-main/include  -g   -o CMakeFiles/RPN.dir/src/main.cpp.o -c /home/dmitry/Desktop/Reverse-Polish-Notation-main/src/main.cpp",
+  "file": "/home/dmitry/Desktop/Reverse-Polish-Notation-main/src/main.cpp"
+},
+{
+  "directory": "/home/dmitry/Desktop/Reverse-Polish-Notation-main/build",
+  "command": "/bin/g++-9   -I/home/dmitry/Desktop/Reverse-Polish-Notation-main/include  -g   -o CMakeFiles/RPN.dir/src/statemachine.cpp.o -c /home/dmitry/Desktop/Reverse-Polish-Notation-main/src/statemachine.cpp",
+  "file": "/home/dmitry/Desktop/Reverse-Polish-Notation-main/src/statemachine.cpp"
+}
+]
